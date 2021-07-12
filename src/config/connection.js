@@ -1,10 +1,10 @@
 import { Sequelize } from "sequelize";
 import database from "./database";
 
-import AdminUser from "../app/model/AdminUser";
+import Admin from "../app/model/Admin";
 
 const connection = new Sequelize(database);
 
-AdminUser.init(connection);
+Admin.init(connection);
 
 export default connection;
