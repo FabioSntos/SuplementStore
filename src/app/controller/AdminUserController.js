@@ -18,7 +18,8 @@ class AdminUserController {
     //   where: { email: req.body.email },
     // });
     // if (userExists) res.status(400).json({ error: "Usuário já cadastrado" });
-    const { id, login, password } = await Admin.create(req.body);
+    const { id, login, password } = req.body;
+    await Admin.create(req.body);
     console.log(req.body);
     return res.json({
       id,
