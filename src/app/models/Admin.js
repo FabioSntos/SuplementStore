@@ -13,7 +13,7 @@ class Admin extends Model {
         },
         login: Sequelize.STRING,
         password: Sequelize.VIRTUAL,
-        // password_hash: Sequelize.STRING,
+        password_hash: Sequelize.STRING,
       },
       {
         sequelize,
@@ -21,13 +21,13 @@ class Admin extends Model {
         tableName: "admin",
       }
     );
-    /*
+
     this.addHook("beforeSave", async (user) => {
       if (user.password) {
         return (user.password_hash = await bcrypt.hash(user.password, 10));
       }
     });
-    */
+
     return this;
   }
   // checkPassword(password) {

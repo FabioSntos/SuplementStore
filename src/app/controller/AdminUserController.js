@@ -1,4 +1,4 @@
-import Admin from "../model/Admin";
+import Admin from "../models/Admin";
 import * as Yup from "yup";
 
 class AdminUserController {
