@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import authConfig from "../../config/auth";
 
 class SessionControler {
-  async store(req, res) {
+  async session(req, res) {
     const schema = await Yup.object().shape({
       login: Yup.string().required(),
       password: Yup.string().required(),
