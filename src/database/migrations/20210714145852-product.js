@@ -23,7 +23,7 @@ module.exports = {
       },
       id_department: {
         type: Sequelize.INTEGER,
-        references: { model: "Department", key: "id" },
+        references: { model: "department", key: "id" },
         onUpdate: "CASCADE",
         onDelete: "SET NULL",
       },
