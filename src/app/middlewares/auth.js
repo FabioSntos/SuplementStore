@@ -6,9 +6,7 @@ export default async (req, res, next) => {
   const authHeaders = req.headers.authorization;
 
   if (!authHeaders) {
-    return res
-      .status(401)
-      .json({ message: "Para acessar este serviço é necessário estar logado" });
+    return res.status(401).json({ message: "access denied" });
   }
   const [, token] = authHeaders.split(" ");
 
@@ -18,7 +16,7 @@ export default async (req, res, next) => {
     next();
   } catch (error) {
     return res.status(401).json({
-      message: "Token inválido",
+      message: "Invalid Token",
     });
   }
 };
