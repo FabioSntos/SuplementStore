@@ -1,7 +1,8 @@
 import { Sequelize } from "sequelize";
+
 import Model from "./baseModel";
 
-class Admin extends Model {
+class Product extends Model {
   static init(sequelize) {
     super.init(
       {
@@ -10,9 +11,10 @@ class Admin extends Model {
           type: Sequelize.INTEGER,
           autoIncrement: true,
         },
-        name: Sequelize.STRING,
-        price: Sequelize.FLOAT,
+        nameProduct: Sequelize.STRING,
         description: Sequelize.STRING(1234),
+        nameImg: Sequelize.STRING,
+        path: Sequelize.STRING,
         id_department: Sequelize.INTEGER,
       },
       {
@@ -28,4 +30,4 @@ class Admin extends Model {
   }
 }
 
-export default Admin;
+export default Product;

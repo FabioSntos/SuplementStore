@@ -9,16 +9,20 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-      name: {
+      nameProduct: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      price: {
-        type: Sequelize.FLOAT,
+      nameImg: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      path: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
       description: {
-        type: Sequelize.STRING(1234),
+        type: Sequelize.STRING,
         allowNull: false,
       },
       id_department: {
