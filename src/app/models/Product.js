@@ -1,5 +1,4 @@
 import { Sequelize } from "sequelize";
-
 import Model from "./baseModel";
 
 class Product extends Model {
@@ -9,24 +8,18 @@ class Product extends Model {
         id: {
           primaryKey: true,
           type: Sequelize.INTEGER,
-          autoIncrement: true,
         },
-        nameProduct: Sequelize.STRING,
-        description: Sequelize.STRING(1234),
-        nameImg: Sequelize.STRING,
-        path: Sequelize.STRING,
-        id_department: Sequelize.INTEGER,
+        name: Sequelize.STRING,
+        descricao: Sequelize.STRING,
+        preco: Sequelize.INTEGER,
       },
       {
         sequelize,
         underscored: true,
-        tableName: "product",
+        tableName: "Product",
       }
     );
     return this;
-  }
-  static associate(models) {
-    this.belongsTo(models.department, { foreignKey: "id_department" });
   }
 }
 

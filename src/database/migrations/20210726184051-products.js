@@ -2,34 +2,24 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("product", {
+    return queryInterface.createTable("Product", {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
       },
-      nameProduct: {
+      name: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      nameImg: {
+      descricao: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      path: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      description: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      id_department: {
+      preco: {
         type: Sequelize.INTEGER,
-        references: { model: "department", key: "id" },
-        onUpdate: "CASCADE",
-        onDelete: "SET NULL",
+        allowNull: false,
       },
       created_at: {
         type: Sequelize.DATE,
@@ -43,6 +33,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable("product");
+    return queryInterface.dropTable("Product");
   },
 };

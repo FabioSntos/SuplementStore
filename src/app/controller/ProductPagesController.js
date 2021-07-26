@@ -1,8 +1,34 @@
 import Product from "../models/Product";
+import * as Yup from "yup";
 
 class ProductPagesController {
   async store(req, res) {
-    return res.status(201);
+    const schema = await Yup.object().shape({
+      name: Yup.string().required(),
+      descricao: Yup.string().required(),
+      preco: Yup.number().required(),
+    });
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({
+        message:
+          "Falha ao cadastrar produto; Por favor corrija os dados para alteração",
+      });
+    }
+    const productExist = await Product.findOne({
+      where: { name: req.body.name },
+    });
+
+    if (productExist) {
+      return res.status(400).json({ error: "Produto já existe no sistema" });
+    }
+
+    const { id, name, descricao, preco } = await Product.create(req.body);
+    return res.json({
+      id,
+      name,
+      descricao,
+      preco,
+    });
   }
 
   async returnProducts(req, res) {
