@@ -6,7 +6,10 @@ class ProductPagesController {
     const schema = await Yup.object().shape({
       name: Yup.string().required(),
       descricao: Yup.string().required(),
-      preco: Yup.number().required(),
+      benefits1: Yup.string().required(),
+      benefits2: Yup.string().required(),
+      benefits3: Yup.string().required(),
+      id_dep: Yup.number().required(),
     });
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({
@@ -22,12 +25,16 @@ class ProductPagesController {
       return res.status(400).json({ error: "Produto já existe no sistema" });
     }
 
-    const { id, name, descricao, preco } = await Product.create(req.body);
+    const { id, name, descricao, benefits1, benefits2, benefits3, id_dep } =
+      await Product.create(req.body);
     return res.json({
       id,
       name,
       descricao,
-      preco,
+      benefits1,
+      benefits2,
+      benefits3,
+      id_dep,
     });
   }
 

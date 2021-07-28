@@ -11,7 +11,10 @@ class Product extends Model {
         },
         name: Sequelize.STRING,
         descricao: Sequelize.STRING,
-        preco: Sequelize.INTEGER,
+        benefits1: Sequelize.INTEGER,
+        benefits2: Sequelize.INTEGER,
+        benefits3: Sequelize.INTEGER,
+        id_dep: Sequelize.INTEGER,
       },
       {
         sequelize,
@@ -20,6 +23,9 @@ class Product extends Model {
       }
     );
     return this;
+  }
+  static associate(models) {
+    this.belongsTo(models.Department, { foreignKey: "id_dep" });
   }
 }
 
