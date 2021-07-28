@@ -3,7 +3,7 @@ import database from "./database";
 
 import Admin from "../app/models/Admin";
 import Product from "../app/models/Product";
-import Department from "../app/models/Departments";
+import Department from "../app/models/Department";
 
 const connection = new Sequelize(database);
 

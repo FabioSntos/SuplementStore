@@ -7,13 +7,15 @@ import multer from "multer";
 import multerConfig from "./config/multer";
 
 import authMiddleware from "./app/middlewares/auth";
+import DepartmentController from "./app/controller/DepartmentController";
 
 const routes = new Router();
-const upload = multer(multerConfig);
 
 routes.post("/admin", AdminUserController.store);
 routes.post("/session", SessionController.session);
 routes.post("/products", ProductPagesController.store);
+routes.get("/departments", DepartmentController.returnDept);
+routes.post("/departments", DepartmentController.store);
 
 routes.use(authMiddleware);
 
