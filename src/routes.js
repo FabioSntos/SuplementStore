@@ -16,7 +16,7 @@ routes.post("/session", SessionController.session);
 routes.post("/products", ProductPagesController.store);
 routes.get("/products/:id", ProductPagesController.ProductById);
 routes.get("/products", ProductPagesController.returnProducts);
-routes.get("/", () => {
+routes.get("/", (req, res) => {
   res.status(200);
 });
 
