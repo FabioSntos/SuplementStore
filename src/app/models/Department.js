@@ -1,5 +1,5 @@
-import { Sequelize } from "sequelize";
-import Model from "./baseModel";
+const { Sequelize } = require("sequelize");
+const Model = require("./baseModel");
 
 class Department extends Model {
   static init(sequelize) {

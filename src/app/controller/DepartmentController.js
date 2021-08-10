@@ -1,6 +1,6 @@
-import Department from "../models/Department";
+const Department = require("../models/Department");
 
-import * as Yup from "yup";
+const Yup = require("yup");
 
 class DepartmentController {
   async store(req, res) {

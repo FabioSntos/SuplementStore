@@ -1,10 +1,10 @@
-import { Router } from "express";
-import AdminUserController from "./app/controller/AdminUserController";
-import SessionController from "./app/controller/SessionController";
-import ProductPagesController from "./app/controller/ProductPagesController";
+const { Router } = require("express");
+const AdminUserController = require("./app/controller/AdminUserController");
+const SessionController = require("./app/controller/SessionController");
+const ProductPagesController = require("./app/controller/ProductPagesController");
 
-import authMiddleware from "./app/middlewares/auth";
-import DepartmentController from "./app/controller/DepartmentController";
+const authMiddleware = require("./app/middlewares/auth");
+const DepartmentController = require("./app/controller/DepartmentController");
 
 const routes = new Router();
 

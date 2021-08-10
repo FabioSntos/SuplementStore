@@ -1,6 +1,6 @@
-import { Sequelize } from "sequelize";
-import Model from "./baseModel";
-import bcrypt from "bcryptjs";
+const { Sequelize } = require("sequelize");
+const Model = require("./baseModel");
+const bcrypt = require("bcryptjs");
 
 class Admin extends Model {
   static init(sequelize) {

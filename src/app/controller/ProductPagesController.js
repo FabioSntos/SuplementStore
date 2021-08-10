@@ -1,5 +1,5 @@
-import Product from "../models/Product";
-import * as Yup from "yup";
+const Product = require("../models/Product");
+const Yup = require("yup");
 
 class ProductPagesController {
   async store(req, res) {

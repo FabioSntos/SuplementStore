@@ -1,6 +1,6 @@
-import Admin from "../models/Admin";
+const Admin = require("../models/Admin");
 
-import * as Yup from "yup";
+const Yup = require("yup");
 
 class AdminUserController {
   async store(req, res) {

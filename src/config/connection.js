@@ -1,9 +1,9 @@
-import { Sequelize } from "sequelize";
-import database from "./database";
+const { Sequelize } = require("sequelize");
+const database = require("./database");
 
-import Admin from "../app/models/Admin";
-import Product from "../app/models/Product";
-import Department from "../app/models/Department";
+const Admin = require("../app/models/Admin");
+const Product = require("../app/models/Product");
+const Department = require("../app/models/Department");
 
 const connection = new Sequelize(database);
 

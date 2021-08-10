@@ -1,10 +1,10 @@
-import app from './app';
-import connection from './config/connection';
+const app = require("./app");
+const connection = require("./config/connection");
 
 const conect = async () => {
   try {
     await connection.authenticate();
-    console.log('db on');
+    console.log("db on");
   } catch (error) {
     console.log(error);
   }
