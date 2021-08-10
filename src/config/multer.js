@@ -1,6 +1,7 @@
-import multer from "multer";
-import crypto from "crypto";
+const multer = require("multer");
+const crypto = require("crypto");
 import { extname, resolve } from "path";
+const { extname, resolve } = require("path");
 
 export default {
   storage: multer.diskStorage({
