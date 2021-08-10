@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "nodemon src/server",
-    "start": "babel-node src/server"
+    "start": "src/server"
   },
   "repository": {
     "type": "git",
